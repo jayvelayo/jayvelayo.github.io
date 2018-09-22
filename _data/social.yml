@@ -1,6 +1,10 @@
-- name: Facebook
-  link: 'https://www.facebook.com/comfusionllc'
-  social_icon: Facebook
+- name: GitHub
+  link: 'https://www.github.com/jayvelayo'
+  social_icon: GitHub
+  new_window: true
+- name: LinkedIn
+  link: 'https://www.linkedin.com/in/jayvelayo/'
+  social_icon: LinkedIn
   new_window: true
 - name: RSS
   link: '/feed.xml'

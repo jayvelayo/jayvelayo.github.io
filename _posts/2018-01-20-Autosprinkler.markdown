@@ -4,7 +4,7 @@ title: AutoSprinkler using MSP430
 category: Project
 date: 2018-09-20
 ---
-<img src="/assets/images/fulls/autosprinkler.jpg" class="fit image"> The Automatic Sprinkler system uses an MSP430G2553 to monitor and control soil moisture levels of multiple plants. The idea behind this system is that different potted plants may require different watering needs. Its automated system aims to provide the user the ease of mind with regards to the health of the plants. 
+<img src="/assets/images/fulls/autosprinkler.JPG" class="fit image"> The Automatic Sprinkler system uses an MSP430G2553 to monitor and control soil moisture levels of multiple plants. The idea behind this system is that different potted plants may require different watering needs. Its automated system aims to provide the user the ease of mind with regards to the health of the plants. 
 
 # Project Description
 

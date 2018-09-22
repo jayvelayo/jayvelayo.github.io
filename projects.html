@@ -1,10 +1,11 @@
 ---
 layout: default
 permalink: /projects/
+title: Projects
 ---
 <div id="main">
-
   <section>
+    <h1 class="post-title">{{ page.title }}</h1>
     <div class="row">
       {% for post in site.posts  %}
         <article class="{% cycle '6u', '6u$' %} 12u(small)">

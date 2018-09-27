@@ -13,7 +13,11 @@ The project was divided into two main components, the tracking system and the ba
 
 The ball return system uses a two-ended paddle which uses a 2D coordinate system. The system’s hardware includes two servo motors and two controllers. An MSP430F2274 is used to control a servomotor which is implemented using a DC motor with a rotary encoder. This provides more than 360 degrees precise rotation to move the paddle horizontally. An Arduino is used to control another servo which provides rotational control of the paddle. The controllers receives instructions from the C# program using UART. Together, they are able to control the XY Coordinates of the paddle.
 
-## Locating the Ping Pong using Camera
+# Table of Contents
+* auto-gen TOC:
+{:toc}
+
+# Locating the Ping Pong using Camera
 
 The hardware set-up uses 2 PS3EYE to cover all three ball position axis of X,Y, and Z location. In order to get a higher stability for the ball color detection, a higher resolution of 640x480 at 60Hz was chosen instead of 320x240 at 120Hz which still provided enough sampling rate to pinpoint a fast moving ball. Due to the flickering of the ball as it changes position (there may be shadows that affect the circle contour detection). A Kalman filter was implemented to provide some stability to the ball detection. 
 
@@ -29,7 +33,7 @@ This binary image is then used to trace out the approximated contour by using cv
 
 In order to convert the ball positions in pixels to real world value (later on to be used for paddle actuation), the dimensions of the camera image is measured and used to scale the pixels to centimeters length. It is approximated that the value is 133 cm:320 pixels and 83 cm:240 pixels height for the two cameras mounted 1m away from the table. However, this is subjected to some deviations, since the camera is at a distance away from the table and induces a fish eyes lense type effect. Therefore, the further away from the center the ball is, the more inaccurate the ball position is. 
 
-## Blocking Arm Design
+# Blocking Arm Design
 
 The block arm is a rod with two paddle at each ends. This will help in the reduction of the time response needed to react and block the ping pong ball as each paddle can cover half of the coverage area. The design involves using a servo arm to rotate the arm to reach the upper and lower halves. Two motors are required for this system. One servo is used to rotate the arm 180deg. This servo is then responsible for reaching the vertical coordinates. Another motor is then used to move the arm horizontally on the rail. The motor used is a DC motor with an encoder in order to cover the distance required.
 
@@ -39,7 +43,7 @@ The approach of this problem involves determining the corresponding two inputs f
 
 Due to the movement in the horizontal rail, the vertical supports must be able to absorb the vibration due to the response of the horizontal movement. Therefore, aluminum L beams are used to hold the entire structure as it provides a stiff base for the rails to attach
 
-### DC Motor Simulation and Test
+## DC Motor Simulation and Test
 
 As the servo is already a fixed set, the remaining component that can be changed is the DC motor. Because the motor is a closed-loop system, optimization within the controller is done to have a critically damped system. Since a P-controller will be used, an approach to find a suitable Kp value is employed. This includes modelling the motor as a first order system. This allows us to model the system using Simulink.
 
@@ -49,7 +53,7 @@ Using the Simulink model, we have found that an ideal Kp value is around 180. In
 
 Another parameter for the entire system is the total response time of the system. Ideally, the system should be in position to block the ball in approximately 100ms. This value is just an approximation of the time it takes for the ball hit by the user to the point it reaches the blocking plane.
 
-## System Evaluation / Conclusion
+# System Evaluation / Conclusion
 
 The last test involves examining the entire system’s performance with regards to its objective to intercept the ping pong ball. Three evaluation criteria is employed to see if our system meets the desired objective. These are:
 1.	Time response of the system
@@ -69,7 +73,7 @@ The last criteria is the number of blocked shots. This test simply involves us l
 
 The first two observation can be thought of a continuation of the observation found from the second criteria. Because the DC motor moves slowly, and coupled with the delay of the system due to the filter and computation time, farther areas are hard to consistently blocked.
 
-## Reflections
+# Reflections
 
 From the project, it can be concluded that while faster systems may require expensive parts, a good trajectory prediction method can help with overall response times. However, if the project were to be done in the future, a higher frame rate would be used instead of 60Hz. As can be seen in the trajectory prediction functional requirement, due to the fast moving nature of the ball, it happens very often that there are not enough sample points for the filtered data to reach the real value. Hence, during demos and testing, the ball has to be launched at a lower speed for the paddles to arrive on time.
 

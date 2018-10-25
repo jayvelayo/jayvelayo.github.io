@@ -29,7 +29,7 @@ The system uses MSP430G2553 as the controller of the system. The controller’s 
 
 <img src="\assets\Autosprinkler-files\board.JPG" class="fit image">
 
-Because this project was a way to showcase my skill in embedded system design, I've used the MSP430 instead of an Arduino. This allowed me to build the board from the ground up which would give me valuable insight in the design of the board. I separated the board design into three distinct parts - the power regulator, the microcontroller, and the electronic switch. I constructed each parts in the order I mentioned and performed functional tests to ensure that the system will become operational. This is a [PDF of the schmatic made using KiCAD](\assets\Autosprinkler-files\Autosprinkler_schematics.pdf).
+Because this project was a way to showcase my skill in embedded system design, I've used the MSP430 instead of an Arduino. This allowed me to build the board from the ground up which would give me valuable insight in the design of the board. I separated the board design into three distinct parts - the power regulator, the microcontroller, and the electronic switch. I constructed each parts in the order I mentioned and performed functional tests to ensure that the system will become operational. This is a [PDF of the schmatic made using KiCAD](\assets\Autosprinkler-files\AutoSprinkler_schematics.pdf).
 
 ## Power Regulation design
 
@@ -85,7 +85,7 @@ As a first personal project, this was an exciting process where I learned numero
 
 # References
 
-* [Electrical Schematics](\assets\Autosprinkler-files\Autosprinkler_schematics.pdf)
+* [Electrical Schematics](\assets\Autosprinkler-files\AutoSprinkler_schematics.pdf)
 * [Source code](https://github.com/jayvelayo/AutoSprinkler)
 
 

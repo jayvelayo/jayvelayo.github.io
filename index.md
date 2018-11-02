@@ -15,7 +15,7 @@ layout: default
 ## Introduction
 Building robots have always been a passion of mine. There's nothing more satisfying than designing, testing, and deploying completed designs that aims to enhance performance, stability, and efficiency. My involvement in student design teams, and previous work experience has shaped me to become an analytical and dependable engineer. I always give full attention to details in every project lifecycle to ensure that technical functionalities are met.
 
-I'm eager to tackle new challenges that I will undoubtably will face. I'm looking for a role where I'm able to solve real-world problems with logical and innovative solutions. As a fresh graduate, I'm excited to learn from more experienced members and be able to contribute in the industry. I'm also not afraid to work in a hands-on setting, whether it'll be in an instrumentation lab or machine shop setting. 
+My passion lies in programming embedded systems using C or C++. I aspire to use my skills in concurrency and real-time system design to create products that can meet functional requirements in an effective manner. In my free time, I use these skills to create simple yet meaningful designs that showcases my understanding. Therefore, I'm looking for a chance to translate my experience into products that aim to solve real-world problems with logical and innovative solutions. As a fresh graduate, I'm excited to learn from more experienced members and be able to contribute in the industry. I'm also not afraid to work in a hands-on setting, whether it'll be in an instrumentation lab or machine shop setting. 
 
 ## Technical Skills
 * Programming: C/C++, C#, MATLAB, Assembly, Visual Basic, .NET

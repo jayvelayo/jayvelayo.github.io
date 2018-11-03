@@ -81,7 +81,7 @@ I left the AutoSprinkler for a week to see its effectiveness. The research and t
 
 After reviewing my code, I also found some opportunities to improve my code. For one, I maintained to have delay_cycles. Despite it only being 1 second long, it still can be improved by using the existing timer to generate another interrupt.
 
-As a first personal project, this was an exciting process where I learned numerous design practices first hand. This has also assured me that this types of projects aligns with my passionin building embedded systems. I'm starting another project so stay tuned for more!
+As a first personal project, this was an exciting process where I learned numerous design practices first hand. This has also assured me that this types of projects aligns with my passion in building embedded systems.
 
 # References
 

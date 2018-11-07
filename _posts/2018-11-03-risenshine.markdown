@@ -5,7 +5,7 @@ category: Project
 date: 2018-11-02
 ---
 
-<img src="/assets/risenshine-files/overview.JPG" class="fit image"> The Rise N' Shine project aims to automate the opening and closing of blinds based on the current sun position. Its purpose was to utilize the natural sunlight to maximize the amount of light in the room. It also allows a convenient solution for people who depend on sunlight to synchronize their circadian rhythm to the natural sun.
+<img src="/assets/risenshine-files/overview2.JPG" class="fit image"> The Rise N' Shine project aims to automate the opening and closing of blinds based on the current sun position. Its purpose was to utilize the natural sunlight to maximize the amount of light in the room. It also allows a convenient solution for people who depend on sunlight to synchronize their circadian rhythm to the natural sun.
 
 # Project Summary
 

@@ -17,7 +17,7 @@ The project serves as a continuation of embedded system design practice. However
 
 The system uses an MSP430G2553 as the main microcontroller with a ESP8266 microchip (in an ESP-01 module) as a Wifi transreceiver. The MSP430 and ESP8266 communicates through UART with a custom API created to ease the communication process. A stepper driver was used to interface the MSP430 and the stepper motor.
 
-The limitation of the MSP430 is the lack of a kernel capable of perforiming time slicing. As a result, the controller juggles through numerous tasks using event-driven programming. However, the drawback is that each tasks can only be done one at a time.
+The limitation of the MSP430 is the lack of a kernel capable of performing time slicing. As a result, the controller juggles through numerous tasks using event-driven programming. However, the drawback is that each tasks can only be done one at a time.
 
 Overall, the system fulfills the three set requirements. However, this is due that these requirements have soft limits that can easily be broken. For a fully responsive system capable of doing more, a better controller with a concurrent programming functionality will fix the found problems.
 
@@ -27,7 +27,7 @@ Overall, the system fulfills the three set requirements. However, this is due th
 
 # Electrical and Board Design
 
-The board is similar to the created board found previously in the [AutoSprinker post](https://jayveevelayo.com/project/2018/09/20/Autosprinkler/). However, it accepts a 5V input from the wallwart rather than the 12V. The PDF of the schmeatic using KiCAD is found [here](/assets/risenshine-files/RiseNShine-schmatics.pdf). It contains the 3.3V voltage regulator shared by the MSP430 and ESP8266. The 5V is fed directly to the ULN2003A driver.
+The board is similar to the created board found previously in the [AutoSprinker post](https://jayveevelayo.com/project/2018/09/20/Autosprinkler/). However, it accepts a 5V input from the wallwart rather than the 12V. The PDF of the schematic using KiCAD is found [here](/assets/risenshine-files/RiseNShine-schmatics.pdf). It contains the 3.3V voltage regulator shared by the MSP430 and ESP8266. The 5V is fed directly to the ULN2003A driver, which controls the current flow of the stepper motor windings.
 
 # Mechanical Design
 
@@ -45,17 +45,17 @@ The bulk of the work in the project involves the software portion. From the thre
 
 ## Message API
 
-With the MSP430 lacking its own wifi capabilities, the ESP8266 is used. Since the ESP8266 only has two GPIO, it can't perform as a standalone microcontroller. Therefore, using UART, a communication protocol is created such that the two chips can open send messages to each other. A 9-byte packet is sent between the two for each command. Its structure has a start byte, command byte, 6 data byte which are 3 32-bit data divided into its Most significant and least significant byte, and a checksum byte. 
+With the MSP430 lacking its own wifi capabilities, the ESP8266 is used. Since the ESP8266 only has two GPIO, it can't perform as a standalone microcontroller. Therefore, using UART, a communication protocol is created such that the two chips can send messages to each other. A 9-byte packet is sent between the two for each command. Its structure has a start byte, command byte, 6 data byte which are 3 32-bit data divided into its Most significant and least significant byte, and a checksum byte. 
 
 <img src="/assets/risenshine-files/packet_uml.png" class="fit image">
 
-To standardize the sending/receiving of packets, a base class called MessageAPI is created. Since each chip have their own implementation of the serial port, child classes based on the chip is created. The base class allows a unified approach when sending packets to each other, eliminating complexity and sources of errors.
+To standardize the sending/receiving of packets, a base class called MessageAPI is created. Since each chip have their own implementation of the serial port, derived classes based on the chip is created. The base class allows a unified approach when sending packets to each other, eliminating complexity and sources of errors.
 
 <img src="/assets/risenshine-files/api_uml.png" class="fit image">
 
 ## Real-time Design challenge
 
-The MSP430 is in charge of numerous tasks from its modules. To tackle the juggling of multiple tasks without the capabilities of multithreading, event-driven programming is used. Each tasks is given a hardware interrupt which will raise a flag that it should be processed. The main loop polls for each flag and checks if there's tasks to be done. The biggest drawback in this design is that a task will not start until the other tasks have finished. This may cause some tasks to miss its deadline, if any. However, because the times are soft limits, tasks can be completed with a large margin of time error. For example, even if the opening of blinds is delayed by 1 minute, in the grander scheme of things, this is inconsequential. Therefore, for this specific purpose, the use of such design is sufficient.
+The MSP430 is in charge of numerous tasks from its modules. To tackle the juggling of multiple tasks without the capabilities of multithreading, event-driven programming is used. Each tasks is given a hardware interrupt which will raise a flag that it should be processed. The main loop polls for each flag and checks if a task requires to be processed. The biggest drawback in this design is that a task will not start until the current task has finished being processed. This may cause some tasks to miss its deadline if a task takes too long to finish. However, because the times are soft limits, tasks can be completed with a large margin of time error. For example, even if the opening of blinds is delayed by 1 minute, in the grander scheme of things, this is inconsequential. Therefore, for this specific purpose, the use of such design is sufficient.
 
 # Testing and Validation
 

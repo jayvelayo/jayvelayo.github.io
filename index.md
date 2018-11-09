@@ -13,16 +13,16 @@ layout: default
 <div class="info" markdown="1">  
 
 ## Introduction
-Building robots have always been a passion of mine. There's nothing more satisfying than designing, testing, and deploying completed designs that aims to enhance performance, stability, and efficiency. My involvement in student design teams, and previous work experience has shaped me to become an analytical and dependable engineer. I always give full attention to details in every project lifecycle to ensure that technical functionalities are met.
+Building robots has always been a passion of mine. There's nothing more satisfying than designing, testing, and deploying completed designs that aim to enhance performance, stability, and efficiency. My involvement in student design teams, and previous work experience have shaped me to become an analytical and dependable engineer. I always give my full attention to details in every project lifecycle to ensure that technical functionalities are met.
 
-My passion lies in programming embedded systems using C or C++. I aspire to use my skills in concurrency and real-time system design to create products that can meet functional requirements in an effective manner. In my free time, I use these skills to create simple yet meaningful designs that showcases my understanding. Therefore, I'm looking for a chance to translate my experience into products that aim to solve real-world problems with logical and innovative solutions. As a fresh graduate, I'm excited to learn from more experienced members and be able to contribute in the industry. I'm also not afraid to work in a hands-on setting, whether it'll be in an instrumentation lab or machine shop setting. 
+My passion lies in programming embedded systems using C or C++. I aspire to use my skills in concurrency and real-time system design to create products that can meet functional requirements in an effective manner. In my free time, I use these skills to create simple yet meaningful designs that showcases my understanding. Therefore, I'm looking for an opportunity to translate my experience into products that aim to solve real-world problems with logical and innovative solutions. As a fresh graduate, I'm excited to learn from more experienced members and be able to contribute to the industry. I'm also not afraid to work in a hands-on setting, whether it be in an instrumentation lab or in a machine shop setting. 
 
 ## Technical Skills
-* Programming: C/C++, C#, MATLAB, Assembly, Visual Basic, .NET
-* System Design: Digital Control Systems, Concurrent Programming, OS Design, Control Theory
-* Hardware Design: Arduino, MSP430, I2C, SPI, UART, Motors, Sensors
-* Software: Visual Studio, Code Composer Studio, SolidWorks, KiCAD, Excel VBA
-* Project Management: Git, SVN, UML, Jira, JDEdwards
+* Programming: C/C++, Assembly, C#, Python, MATLAB, Visual Basic
+* System Design: Real-time Design, Concurrent Programming, Control Theory, Digital Systems Design
+* Hardware Design: Arduino, MSP430, ESP8266 WiFi Module, I2C, SPI, UART, Motors, Sensors
+* Software: Visual Studio, Code Composer Studio, KiCAD, SolidWorks, Excel VBA
+* Project Management: Git, SVN, UML, Jira
 
 ## Interests
 * **Self driving cars** - It's a new and upcoming technology which I think will create a lasting impact technologically and socially.

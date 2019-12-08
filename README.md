@@ -11,7 +11,7 @@ Simple, clean personal blogging template for Jekyll based on Strata by HTML5 UP.
 * Pre-styled components
 * Blog with pagination
 * Configurable footer
-* Optimized for editing in [CloudCannon](http://cloudcannon.com/)
+* Optimized for editing in [CloudCannon](https://cloudcannon.com/)
 * RSS/Atom feed
 * SEO tags
 * Google Analytics
@@ -25,9 +25,9 @@ Simple, clean personal blogging template for Jekyll based on Strata by HTML5 UP.
 
 ## Develop
 
-Urban was built with [Jekyll](http://jekyllrb.com/) version 3.3.1, but should support newer versions as well.
+Urban was built with [Jekyll](https://jekyllrb.com/) version 3.3.1, but should support newer versions as well.
 
-Install the dependencies with [Bundler](http://bundler.io/):
+Install the dependencies with [Bundler](https://bundler.io/):
 
 ~~~bash
 $ bundle install
@@ -55,4 +55,4 @@ Strata Reloaded is already optimized for adding, updating and removing posts and
 
 ## License
 
-Free for personal and commercial use under the CCA 3.0 license. See LICENSE file for additional information and terms of use. This theme was adapted from Strata by HTML5 UP for use with [CloudCannon](http://cloudcannon.com) by [Comfusion LLC](http://comfusionllc.com).
+Free for personal and commercial use under the CCA 3.0 license. See LICENSE file for additional information and terms of use. This theme was adapted from Strata by HTML5 UP for use with [CloudCannon](https://cloudcannon.com) by [Comfusion LLC](https://comfusionllc.com).

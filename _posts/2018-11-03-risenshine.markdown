@@ -33,7 +33,7 @@ The board is similar to the created board found previously in the [AutoSprinker 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u_h9PCJ-8aE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The blinds contain two hanging string that controls the angle of rotation of the blinds. A timing belt is attached to both ends, forming a loop. The stepper motor, located at the windowsill, moves the belt as required to change the angle. The chosen stepper motor, [28BYJ-48](http://robocraft.ru/files/datasheet/28BYJ-48.pdf), moves one rotation per 4096 steps. It takes 3 rotation for the blinds to move approximately 80 degrees.
+The blinds contain two hanging string that controls the angle of rotation of the blinds. A timing belt is attached to both ends, forming a loop. The stepper motor, located at the windowsill, moves the belt as required to change the angle. The chosen stepper motor, 28BYJ-48, moves one rotation per 4096 steps. It takes 3 rotation for the blinds to move approximately 80 degrees.
 
 # System Software Design
 

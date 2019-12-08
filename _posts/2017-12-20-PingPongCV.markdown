@@ -4,7 +4,7 @@ title: Ping Pong arm using CV
 date: 2017-12-20
 ---
 
-<img src="/assets/images/fulls/paddlearms.jpg" class="fit image"> The Computer Vision controlled Ping Pong arm serves as a senior mechatronic project. The system has the ability to track a Ping Pong ball and return it using its motor-controlled paddle. It simulates playing Ping Pong with a human opponent. It's made by a two-person team [Jayvee Velayo](http://github.com/jayvelayo) and [Lynx Lu](https://github.com/LynxHack)
+<img src="/assets/images/fulls/paddlearms.jpg" class="fit image"> The Computer Vision controlled Ping Pong arm serves as a senior mechatronic project. The system has the ability to track a Ping Pong ball and return it using its motor-controlled paddle. It simulates playing Ping Pong with a human opponent. It's made by a two-person team [Jayvee Velayo](https://github.com/jayvelayo) and [Lynx Lu](https://github.com/LynxHack)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_ZPYBEtIChI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 

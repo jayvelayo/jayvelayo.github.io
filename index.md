@@ -13,20 +13,20 @@ layout: default
 <div class="info" markdown="1">  
 
 ## Introduction
-Building robots has always been a passion of mine. There's nothing more satisfying than designing, testing, and deploying completed designs that aim to enhance performance, stability, and efficiency. My involvement in student design teams, and previous work experience have shaped me to become an analytical and dependable engineer. I always give my full attention to details in every project lifecycle to ensure that technical functionalities are met.
 
-My passion lies in programming embedded systems using C or C++. I aspire to use my skills in concurrency and real-time system design to create products that can meet functional requirements in an effective manner. In my free time, I use these skills to create simple yet meaningful designs that showcases my understanding. Therefore, I'm looking for an opportunity to translate my experience into products that aim to solve real-world problems with logical and innovative solutions. As a fresh graduate, I'm excited to learn from more experienced members and be able to contribute to the industry. I'm also not afraid to work in a hands-on setting, whether it be in an instrumentation lab or in a machine shop setting. 
+As a Software engineer, my passion lies in working with embedded systems. In my 3+ years experience writing real-time, multithreaded software, I apply the most suitable software design patterns to create products that promotes excellence and efficiency. I have hands-on experience working with microcontrollers namely ARM Cortex M7, and programming network sockets such as TCP/IP. My peers and managers have complimented my work ethics, particularly my independence and communication skills. I strive to surpass expectations by using my attention to detail to optimize even the smallest components. I'm always looking for new opportunities to translate my experience and knowledge to solve real-world problems with logical and innovative solutions.
+
 
 ## Technical Skills
-* Programming: C/C++, Assembly, C#, Python, MATLAB, Visual Basic
+* Programming: C, C++, Python, Assembly, C#, Visual Basic
 * System Design: Real-time Design, Concurrent Programming, Control Theory, Digital Systems Design
-* Hardware Design: Arduino, MSP430, ESP8266 WiFi Module, I2C, SPI, UART, Motors, Sensors
-* Software: Visual Studio, Code Composer Studio, KiCAD, SolidWorks, Excel VBA
-* Project Management: Git, SVN, UML, Jira
+* Hardware Design: ARM Cortex M7, Arduino, MSP430, ESP8266 WiFi Module, Socket Programming, Serial Communications, Motors, Sensors
+* Software: Visual Studio, Code Composer Studio, Excel VBA
+* Project Management: Git, SVN, UML, Jira, Redmine
 
 ## Interests
-* **Self driving cars** - It's a new and upcoming technology which I think will create a lasting impact technologically and socially.
-* **Sustainable / Alternate Energy** - With the growing need for power production, I'm interested in the use of sustainable energy sources which benefits the global ecosystem.
+* **Sustainable / Alternate Energy** - With the growing need for power production, I'm interested in the use of sustainable energy sources to reduce the carbon emission in the world
+* **Physical Fitness** - Working on my physical health has improved my discipline and work ethics to meet my personal goals
 * **Outdoor Activities** - Living in Vancouver where it boasts the most beautiful scenery, I take my chance to explore nature and take part in outdoor activities.
 
 ## Projects

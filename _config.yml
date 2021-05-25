@@ -1,28 +1,50 @@
-# Site settings
+locale: "en-US"
 title: Jayvee Velayo
-description: >
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+url: "https://jayveevelayo.com"
+baseurl: ""
+google_analytics_key: "UA-126192862-1"
 
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://jayvelayo.github.io/" # the base hostname & protocol for your site
+# Default description in social shares for the jekyll-seo-tag gem
+description: > # this means to ignore newlines until "baseurl:"
+  Personal website of Jayvee Velayo. Check out his new projects right here!
 
+# Author details for the jekyll-seo-tag gem
 author:
-  fullname: Jayvee
-  linkedin: jayvelayo
-  github: jayvelayo
-  # disqus: your_disqus_forum_shortname
+  name: Jayvee Velayo
+  email: jadon.velayo@gmail.com
+  twitter: # twitter username without the @ symbol
 
-# google_analytics: 'UA-XXXXXXXX-X'
+# Social details for the jekyll-seo-tag gem
+social:
+  name: Jayvee Velayo
+  links:
+    - https://github.com/jayvelayo
 
-# Syntax highlighting
-highlightstyle: ''
-styles: [agate, androidstudio, arta, asceti, atelier-cave.dark, atelier-cave.light, atelier-dune.dark, atelier-dune.light, atelier-estuary.dark, atelier-estuary.light, atelier-forest.dark, atelier-forest.light, atelier-heath.dark, atelier-heath.light, atelier-lakeside.dark, atelier-lakeside.light, atelier-plateau.dark, atelier-plateau.light, atelier-savanna.dark, atelier-savanna.light, atelier-seaside.dark, atelier-seaside.light, atelier-sulphurpool.dark, atelier-sulphurpool.light, brown_paper, codepen-embed, color-brewer, dark, darkula, default, docco, far, foundation, github, github-gist, googlecode, grayscale, hopscotch, hybrid, idea, ir_black, kimbie.dark, kimbie.light, magula, mono-blue, monokai, monokai_sublime, obsidian, paraiso.dark, paraiso.light, pojoaque, railscast, rainbow, school_book, solarized_dark, solarized_light, styles_list.txt, sunburst, tomorrow, tomorrow-night-blue, tomorrow-night-bright, tomorrow-night, tomorrow-night-eightie, v, xcode, zenburn]
+permalink: pretty
 
-# Handling Reading
-exclude: ["README.md", "README.html"]
+gems:
+  - "jekyll-feed"
+  - "jekyll-seo-tag"
+  - "jekyll-paginate"
+  - "jekyll-sitemap"
 
-# Build settings
-highlighter: null
-markdown: kramdown
+# Jekyll SEO Tag
+webmaster_verifications:
+  google: # 1234
+  bing: # 1234
+  alexa: # 1234
+  yandex: # 1234
+
+# -----------
+# CloudCannon
+
+social_icons:
+  - Facebook
+  - Google Plus
+  - Instagram
+  - LinkedIn
+  - Pinterest
+  - Tumblr
+  - Twitter
+  - YouTube
+  - RSS

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en">
     <head>
         {% include meta_tags/base.html %}
@@ -18,3 +19,92 @@
         {% include externals/google_analytics.html %}
     </body>
 </html>
+=======
+<html>
+	<head>
+		<title>{{ site.title }}</title>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="{{ site.author.name }}">
+		<meta name="description" content="{{ site.description }}">
+		<meta http-equiv="content-language" content="{{ site.locale }}" />
+		<meta name="generator" content="Jekyll v{{ jekyll.version }}">
+
+		<!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="/css/main.css">
+		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/touch-icon.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+    {% seo %}
+    {% feed_meta %}
+
+	</head>
+
+	<body id="top">
+    <header id="header">
+      <a href="{{ site.url }}" class="image avatar"><img class="editable" src="/assets/images/avatar.jpg" alt="{{ site.author.name }}"></a>
+      <h2 class="editable"><strong>Jayvee Velayo</h2>
+      <h3 class="editable">Software Engineer</h3>
+      <h3 class="editable">Vancouver, BC</h3>
+	  
+	  <h4 class="editable">
+            <h4 class="editable"><a href="{{ '/' | prepend: site.baseurl }}">About Me</a></h4>
+            <h4 class="editable"><a href="{{ '/projects' | prepend: site.baseurl }}">Projects</a></h4>
+            <h4 class="editable"><a href="{{ '/contact' | prepend: site.baseurl }}">Contact</a></h4>
+       </h4>
+    </header>
+
+    {{ content }}
+
+    <footer id="footer">
+      <p class="editor-link"><a href="cloudcannon:collections/_data/social.yml" class="button"><strong>&#9998;</strong> Update Social Icons</a></p>
+      <ul class="icons">
+        {% for account in site.data.social %}
+					<li>
+						<a {% if account.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=account.link %}" {% if account.social_icon %}class="icon fa-{{ account.social_icon | slugify }}"{% endif %}>
+              <span class="label">{{ account.name }}</span>
+						</a>
+					</li>
+				{% endfor %}
+        {% if site.author.email %}
+        <li>
+          <a href="mailto:{{ site.author.email }}" class="icon fa-envelope-o">
+            <span class="label">Email</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+      <ul class="copyright">
+          <li>&copy; Untitled</li>
+          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+          <li>Theme: <a href="https://github.com/old-jekyll-templates/Strata-Jekyll-Theme">Strata Reloaded</a></li>
+      </ul>
+    </footer>
+
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/jquery.poptrox.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/util.js"></script>
+		<!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/js/main.js"></script>
+
+		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126192862-1"></script>
+			<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-126192862-1');
+			</script>
+
+		{% endif %}
+
+	</body>
+</html>
+>>>>>>> d2fae1c56cab60ec3f628bcc9f85c586ea3f276f

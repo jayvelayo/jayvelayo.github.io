@@ -1,2 +1,10 @@
+<<<<<<< HEAD
 _site
 .sass-cache
+=======
+_site/
+.sass-cache/
+
+*.sublime-project
+*.sublime-workspace
+>>>>>>> d2fae1c56cab60ec3f628bcc9f85c586ea3f276f

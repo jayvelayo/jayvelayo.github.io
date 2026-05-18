@@ -5,33 +5,41 @@ permalink: /contact/
 
 <div id="main">
 	<section>
-		<h1>Message me!</h1>
-		<div class="row">  
-            <div class="col-sm-12 col-md-6 contact_left">        
-                <form action="https://formspree.io/jadon.velayo@gmail.com" method="POST">
+		<h1>Get in Touch</h1>
+		<p>Have a question or want to connect? Send me a message and I'll get back to you.</p>
+		<div class="row">
+			<div class="col-sm-12 col-md-8 contact_left">
+				<form action="https://formspree.io/f/jayvelayo@gmail.com" method="POST" style="margin-top: 1em;">
 
-                    <div class="form-group">                                    
-                        <input type="text" class="form-control" id="name" name="name" placeholder="NAME..." value="">                                    
-                    </div><br>
+					<input type="hidden" name="_subject" value="New message from jayveevelayo.com">
+					<input type="text" name="_gotcha" style="display:none">
 
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="EMAIL..." value="">      
-                    </div><br>
+					<div class="form-group" style="margin-bottom: 1.25em;">
+						<label for="name">Name</label>
+						<input type="text" class="form-control" id="name" name="name" placeholder="Your name" required>
+					</div>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="subject" name="subject" placeholder="SUBJECT..." value="">        
-                    </div><br>
-                  
-                    <div class="form-group">
-                        <textarea class="form-control" rows="4" name="message" placeholder="MESSAGE..."></textarea>
-                    </div><br>
-                        
-                    <div class="form-group">
-					<input type="text" name="_gotcha" style="display:none" />
-                        <input id="submit" name="submit" type="submit" value="Send" class="btn view_more btn-submit">
-                    </div><br>          
-                
-                </form>    
-            </div> <!-- .contact-left -->
+					<div class="form-group" style="margin-bottom: 1.25em;">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" id="email" name="email" placeholder="your@email.com" required>
+					</div>
+
+					<div class="form-group" style="margin-bottom: 1.25em;">
+						<label for="subject">Subject</label>
+						<input type="text" class="form-control" id="subject" name="subject" placeholder="What's this about?" required>
+					</div>
+
+					<div class="form-group" style="margin-bottom: 1.5em;">
+						<label for="message">Message</label>
+						<textarea class="form-control" rows="5" id="message" name="message" placeholder="Your message..." required></textarea>
+					</div>
+
+					<div class="form-group">
+						<input id="submit" name="submit" type="submit" value="Send" class="btn view_more btn-submit">
+					</div>
+
+				</form>
+			</div>
+		</div>
 	</section>
 </div>

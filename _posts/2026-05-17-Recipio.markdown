@@ -5,6 +5,8 @@ categories: [Project]
 date: 2026-05-17
 ---
 
+<img src="/assets/recipio/recipio-home.png" class="fit image">
+
 Recipio is a full-stack web application for collecting and organizing recipes from any source — social media posts, food blogs, cooking sites, or manual entry — into a single personal library. It also supports meal planning and automatic grocery list generation. The project served as a practical exercise in building a complete production-grade system end-to-end: RESTful backend in Go, a React frontend, Google OAuth authentication, AI-powered recipe parsing, and Docker-based deployment.
 
 The app is live at [sarap.recipes](https://sarap.recipes). *sarap* is Tagalog for "yummy." The source code is available on [GitHub](https://github.com/jayvelayo/recipio).
@@ -57,6 +59,8 @@ Sessions are managed server-side, with the frontend storing only a session token
 
 # AI Recipe Parsing
 
+<img src="/assets/recipio/add-recipe-ai.png" class="fit image">
+
 The most technically interesting feature is AI-powered recipe parsing. Rather than building brittle web scrapers for individual sites, Recipio takes a different approach: fetch the raw page content, strip HTML tags and boilerplate, and pass the cleaned text to an LLM to extract structured recipe data.
 
 This works in two modes:
@@ -87,6 +91,8 @@ make run   # starts the server at http://localhost:4002
 ```
 
 This single-binary deployment model keeps the operational footprint minimal. I simply run `make deploy` and my server immediately publishes the new container.
+
+Right now, it's being hosted on my home server with Traefik as a reverse proxy. Benefits of Traefik is the Let's Encrypt integration so it's simple to provide TLS connections. The DNS records are hosted on Cloudflare and it helps protect my home IP as well.
 
 # Key Takeaways
 

@@ -1,0 +1,100 @@
+---
+layout: post
+title: "Recipio: A Full-Stack Recipe Manager Built with Go and React"
+categories: [Project]
+date: 2026-05-17
+---
+
+Recipio is a full-stack web application for collecting and organizing recipes from any source — social media posts, food blogs, cooking sites, or manual entry — into a single personal library. It also supports meal planning and automatic grocery list generation. The project served as a practical exercise in building a complete production-grade system end-to-end: RESTful backend in Go, a React frontend, Google OAuth authentication, AI-powered recipe parsing, and Docker-based deployment.
+
+The app is live at [sarap.recipes](https://sarap.recipes) — *sarap* is Tagalog for "yummy." The source code is available on [GitHub](https://github.com/jayvelayo/recipio).
+
+# Project Summary
+
+The core problem Recipio solves is the fragmentation of recipes across the internet. A recipe might live in an Instagram caption, a food blog buried under advertisement paragraphs, or a group chat message. Recipio provides a single place to store them all, regardless of format or origin.
+
+The application supports three main workflows:
+
+* **Recipe library** — add, edit, search, and view recipes with ingredients, instructions, and tags
+* **Meal planning** — build a weekly meal plan by assigning saved recipes to days
+* **Grocery lists** — automatically aggregate ingredients from a meal plan into a consolidated shopping list
+
+# Table of Contents
+* auto-gen TOC:
+{:toc}
+
+# Architecture
+
+Recipio uses a single-server architecture where the Go binary acts as both the web server and API server.
+
+```
+Browser
+   │
+   ▼
+Go Server (:4002)
+   ├── /* → serves React SPA (static files from dist/)
+   └── /recipes, /meal-plans, /grocery, /auth → API handlers
+```
+
+The frontend is built as a React SPA using Vite and Tailwind CSS. In production, the Go binary serves the compiled frontend static files alongside the API. In development, Vite runs its own dev server and proxies API requests to the Go backend, mirroring the production topology from the browser's perspective without requiring any CORS configuration.
+
+The backend uses Go's standard `net/http` library exclusively — no web framework. Handlers are higher-order functions that accept dependencies (database, parser, config) and return `http.Handler`, keeping each handler independently testable. Business logic sits behind a `RecipeDatabase` interface, with a SQLite implementation for production and a mock for tests.
+
+# RESTful API
+
+The backend exposes a RESTful API organized by resource. Routes are registered in a central `routes.go` file and grouped by feature area:
+
+| Resource | Endpoints |
+|---|---|
+| Recipes | `GET/POST /recipes`, `GET/PUT/DELETE /recipes/{id}` |
+| Meal Plans | `GET/POST /meal-plans`, `GET/PUT/DELETE /meal-plans/{id}` |
+| Grocery | `GET /grocery` (derived from active meal plan) |
+| Parse | `POST /parse/text`, `POST /parse/url` |
+| Auth | `GET /auth/login`, `GET /auth/callback`, `POST /auth/logout` |
+
+All request and response bodies use JSON. Handler integration tests use Go's `httptest` package against a mock database, so the full HTTP stack is exercised without requiring a running SQLite instance.
+
+# Google OAuth Authentication
+
+Authentication is handled via Google OAuth 2.0. When a user logs in, the backend generates a cryptographically random state token, stores it in an `HttpOnly` cookie, and redirects the user to Google's authorization endpoint. On callback, the state parameter is validated against the cookie to prevent CSRF attacks before the authorization code is exchanged for a user profile.
+
+Sessions are managed server-side, with the frontend storing only a session token in `localStorage`. An `AuthContext` in React gates all protected routes, redirecting unauthenticated users to the login page.
+
+# AI Recipe Parsing
+
+The most technically interesting feature is AI-powered recipe parsing. Rather than building brittle web scrapers for individual sites, Recipio takes a different approach: fetch the raw page content, strip HTML tags and boilerplate, and pass the cleaned text to an LLM to extract structured recipe data.
+
+This works in two modes:
+
+**URL parsing** — the user submits a link. The backend fetches the page (with a 20-second timeout and a 2 MB body limit), strips `<script>` and `<style>` blocks, removes all remaining HTML tags, and trims the result to 8,000 characters before sending it to the LLM. Private/internal addresses are blocked to prevent SSRF.
+
+**Raw text parsing** — the user pastes recipe text directly (e.g., copied from a social media post). The text is sanitized and sent to the LLM as-is.
+
+In both cases, the LLM returns a structured recipe object — title, ingredients with quantities, step-by-step instructions, and tags — which is displayed to the user for review before saving. This approach generalises across any source that renders text, without needing site-specific parsers.
+
+# Frontend
+
+The frontend is built with React, Vite, and Tailwind CSS. TanStack Query (React Query) handles all data fetching, caching, and background synchronization, keeping the UI in sync with the backend without manual state management.
+
+Pages are organized by feature (`recipes/`, `mealplan/`, `grocery/`) with API calls co-located in `*_apis.jsx` files next to their pages. Feather icons (`react-icons`) are used throughout for a consistent, lightweight icon set. The color theme uses indigo as the primary color and pink as the accent.
+
+Frontend tests run with Vitest and `@testing-library/react`, covering the main recipe flows: list rendering, search filtering, add form (both manual and AI-parse paths), and the view/edit toggle. API calls are mocked via `vi.mock` so tests run entirely without a backend.
+
+# Deployment
+
+Recipio ships as a single Docker image. The build process compiles the React frontend with Vite, embeds the static files into the Go binary, and produces a self-contained server that serves both the SPA and the API from one process.
+
+```bash
+make all   # builds frontend + backend into bin/
+make run   # starts the server at http://localhost:4002
+```
+
+This single-binary deployment model keeps the operational footprint minimal — no separate web server, no reverse proxy required for personal use.
+
+# Key Takeaways
+
+Building Recipio end-to-end reinforced a few things worth highlighting:
+
+- **Interface-driven design in Go** pays off immediately in testing. Wrapping the database behind a `RecipeDatabase` interface made it straightforward to swap in a mock for handler tests, keeping the test suite fast and deterministic.
+- **LLM-based parsing generalises better than scraping.** Site-specific scrapers break constantly as layouts change. Feeding cleaned text to an LLM and asking it to extract structure is more robust and requires no per-site maintenance.
+- **Standard library is sufficient.** Using `net/http` directly, without a framework, kept the dependency surface small and made the routing and middleware behaviour explicit and easy to follow.
